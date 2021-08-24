@@ -11,34 +11,12 @@ class App extends Component {
     super(props);
 
     this.state = { videos: [] };
-    // console.log(this.state)
-    YTSearch({key: API_KEY, term: 'kpop'}, (data) => {
-      console.log(data);
-      // this.state= {videos:videos}
-      console.log(this);
-      // videoList = data;
-      this.setState({ videos: data });
+    console.log(this.state)
+    YTSearch({key: API_KEY, term: 'kpop'}, (videos) => {
+      this.setState({ videos });
     });
   }
-
-   /**
-  componentDidMount() {
-    let videoList = null;
-    YTSearch({key: API_KEY, term: 'kpop'}, (data) => {
-      console.log(data);
-      // this.state= {videos:videos}
-      console.log(this);
-      videoList = data;
-      // this.setState({ videos: data });
-    });
-    this.setState({videos: videoList});
-    console.log(`this.state`);
-    // this.state = {videos: videoList};
-    // console.log(videoList);
-  }
-  */
-
-
+  
   render() {
     return (
       <div>
